@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap");
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.text {
+  position: relative;
+  font-size: 20vmin;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 1px 1px black, 1px -1px black, -1px -1px black, -1px 1px black, 2px 2px black, 2px -2px black, -2px -2px black, -2px 2px black;
+}
+
+.text span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.text span:first-of-type:before, .text span:first-of-type:after {
+  content: '';
+  position: absolute;
+  width: 0.05em;
+  height: 0.05em;
+  -webkit-box-shadow: inset 0 0 0 2px black;
+          box-shadow: inset 0 0 0 2px black;
+  background: white;
+  -webkit-animation: .65s spin linear infinite, 1s grow infinite alternate;
+          animation: .65s spin linear infinite, 1s grow infinite alternate;
+}
+
+@-webkit-keyframes spin {
+  to {
+    rotate: 90deg;
+  }
+}
+
+@keyframes spin {
+  to {
+    rotate: 90deg;
+  }
+}
+
+@-webkit-keyframes grow {
+  to {
+    scale: 1.5;
+    -webkit-box-shadow: inset 0 0 0 1.5px black;
+            box-shadow: inset 0 0 0 1.5px black;
+  }
+}
+
+@keyframes grow {
+  to {
+    scale: 1.5;
+    -webkit-box-shadow: inset 0 0 0 1.5px black;
+            box-shadow: inset 0 0 0 1.5px black;
+  }
+}
+
+.text span:first-of-type:before {
+  top: 20%;
+  left: 0;
+}
+
+.text span:first-of-type:after {
+  bottom: 35%;
+  right: 0;
+}
+
+.text span:nth-of-type(1) {
+  margin-left: 0.033em;
+  z-index: -1;
+  color: white;
+}
+
+.text span:nth-of-type(2) {
+  margin-left: 0.066em;
+  z-index: -2;
+  color: #ff9b00;
+}
+
+.text span:nth-of-type(3) {
+  margin-left: 0.099em;
+  z-index: -3;
+  color: #ff3434;
+}
+
+.text span:nth-of-type(4) {
+  margin-left: 0.132em;
+  z-index: -4;
+  color: #db38f0;
+}
+
+.text span:nth-of-type(5) {
+  margin-left: 0.165em;
+  z-index: -5;
+  color: #0096fb;
+}
+
+.text span:nth-of-type(6) {
+  margin-left: 0.198em;
+  z-index: -6;
+  color: #00c500;
+}
+
+.text span:nth-of-type(7) {
+  margin-left: 0.231em;
+  z-index: -7;
+  color: #ffd200;
+}
+/*# sourceMappingURL=main-style.css.map */

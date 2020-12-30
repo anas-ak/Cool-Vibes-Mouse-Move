@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
+$colors: white, #ff9b00, #ff3434, #db38f0, #0096fb, #00c500, #ffd200;
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.text {
+    position: relative;
+    font-size: 20vmin;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    color: white;
+    text-shadow:
+        1px 1px black,
+        1px -1px black,
+        -1px -1px black,
+        -1px 1px black,
+        
+        2px 2px black,
+        2px -2px black,
+        -2px -2px black,
+        -2px 2px black,
+        ;
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+
+        &:first-of-type {
+
+            &:before, 
+            &:after {
+                content: '';
+                position: absolute;
+                width: 0.05em;
+                height: 0.05em;
+                box-shadow: inset 0 0 0 2px black;
+                background: white;
+                animation: .65s spin linear infinite, 1s grow infinite alternate;
+
+                @keyframes spin {
+                    to { rotate: 90deg }
+                }
+
+                @keyframes grow {
+                    to {
+                         scale: 1.5;
+                         box-shadow: inset 0 0 0 2px * 0.75 black;
+                        }
+                }
+            }
+
+            &:before {
+                top: 20%;
+                left: 0;
+            }
+
+            &:after {
+                bottom: 35%;
+                right: 0;
+            }
+        }
+
+        @for $i from 1 through length($colors) {
+
+            &:nth-of-type(#{$i}) {
+                margin-left: 0.033em * $i;
+                z-index: -1 * $i;
+                color: nth($colors, $i);
+            }
+        }
+    }
+}
